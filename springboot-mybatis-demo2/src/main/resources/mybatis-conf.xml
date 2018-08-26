@@ -15,7 +15,7 @@
 
     <mappers>
         <!-- Using classpath relative resources OK没问题-->
-        <!--<mapper resource="mybatis/mapper/studentMapper.xml"/>-->
+        <mapper resource="mybatis/mapper/studentMapper.xml"/>
 
         <!-- Using url fully qualified paths暂时不进行测试，应该也OK -->
         <!--<mapper url="file:///var/mappers/AuthorMapper.xml"/>-->
@@ -24,6 +24,6 @@
         <!--<mapper class="org.mybatis.builder.AuthorMapper"/>-->
 
         <!-- Register all interfaces in a package as mappers 不OK-->
-        <package name="mybatis.mapper"/>
+        <!--<package name="mybatis.mapper"/>-->
     </mappers>
 </configuration>
