@@ -5,14 +5,9 @@
 <mapper namespace="com.home.dao.StudentDao">
 
     <sql id="allField">
+        <!--注意这里有别名，select*要注意转化-->
         id, `name`, age, memo AS attr, createtime, updatetime
     </sql>
-
-    <!--<select id="getAll" resultType="com.home.pojo.Student">-->
-        <!--select-->
-        <!--id,`name`, age-->
-        <!--from student-->
-    <!--</select>-->
     <select id="getAll" resultType="com.home.pojo.Student">
         select
         <include refid="allField"/>
@@ -49,10 +44,10 @@
         from student where createtime >= #{date}
     </select>
 
-    <insert id="insertStudent" parameterType="com.home.pojo.Student">
-        insert INTO student(id, `name`, age, memo)
-        VALUES (#{id},#{name},#{age},#{memo})
-    </insert>
+    <!--<insert id="insertStudent" parameterType="com.home.pojo.Student">-->
+        <!--insert INTO student(id, `name`, age, memo)-->
+        <!--VALUES (#{id},#{name},#{age},#{memo})-->
+    <!--</insert>-->
 
     <delete id="deleteById">
         DELETE FROM student where id = #{id}

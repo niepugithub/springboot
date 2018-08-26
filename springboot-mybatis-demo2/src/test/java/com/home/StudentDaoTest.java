@@ -9,13 +9,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringBootMybatisDemo2ApplicationTests {
-	@Autowired
-	private StudentDao studentDao;
+public class StudentDaoTest {
+    @Autowired
+    private StudentDao studentDao;
 
-	@Test
-	public void contextLoads() {
-		System.out.println(studentDao.getAll());
-	}
+    @Test
+    public void testFindAll(){
+        System.out.println(studentDao.getAll());
+    }
 
 }
