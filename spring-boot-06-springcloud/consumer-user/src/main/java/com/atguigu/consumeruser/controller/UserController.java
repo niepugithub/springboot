@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 public class UserController {
     @Autowired
     RestTemplate restTemplate;
-    @GetMapping("buy")
+    @GetMapping("/buy")
     public String buy(String name){
         // 通过restTemplate从服务提供者那里获取数据
         String s=restTemplate.getForObject("http://PROVIDER-TICKET/ticket",String.class);
