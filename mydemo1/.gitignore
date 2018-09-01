@@ -25,8 +25,9 @@
 /.nb-gradle/
 
 ###add by niepu ###
-modified:   .idea/compiler.xml
-modified:   .idea/encodings.xml
-modified:   .idea/misc.xml
-modified:   .idea/modules.xml
-modified:   .idea/workspace.xml
+.idea/compiler.xml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+.idea/
