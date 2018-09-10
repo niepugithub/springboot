@@ -75,7 +75,7 @@ app.controller("EmployeeController", function($scope, $http) {
             }
         );
     }
-
+    // 当后台controller返回的数据不是JSON的时候，比如String啥的，则会去执行_error函数
     function _success(res) {
         _refreshEmployeeData();
         _clearFormData();
