@@ -3,7 +3,7 @@ var app = angular.module("EmployeeManagement", []);
 // Controller Part
 app.controller("EmployeeController", function($scope, $http) {
 
-
+    // 这里先定义变量employee，否则编辑行不通
     $scope.employees = [];
     $scope.employee = {
         empId: -1,
