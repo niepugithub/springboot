@@ -5,6 +5,10 @@ import com.rabbitmq.client.ConnectionFactory;
 
 public class ConnectionUtil {
 
+
+    public static String[] argv=new String[]{"error","warning","info"};
+    public static String[] topic=new String[]{"","",""};
+
     public static Connection getConnection() throws Exception{
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");

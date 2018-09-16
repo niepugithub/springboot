@@ -1,5 +1,6 @@
 package com.example.rabbitmq;
 
+import com.example.rabbitmq.springboot.AutoProducer;
 import com.example.rabbitmq.springboot.Produce;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,5 +25,15 @@ public class TestRabbit {
     public void testSend(){
         String[] message=new String[]{"hello","world","你好","中国"};
         produce.send(message);
+    }
+
+
+    @Autowired
+    private AutoProducer autoProducer;
+
+    @Test
+    public void testAutoSend(){
+        String[] message=new String[]{"hello","world","你好","中国"};
+        autoProducer.autoSend(message);
     }
 }
