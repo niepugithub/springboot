@@ -1,5 +1,6 @@
 /target/
 !.mvn/wrapper/maven-wrapper.jar
+.idea/
 
 ### STS ###
 .apt_generated
@@ -9,6 +10,7 @@
 .settings
 .springBeans
 .sts4-cache
+
 
 ### IntelliJ IDEA ###
 .idea
@@ -24,5 +26,17 @@
 /nbdist/
 /.nb-gradle/
 
-### 自定义不想push到远程仓库的目录 ###
-/target
+###  实战项目 ###
+*.idea
+*.class
+*project
+*target
+
+*.war
+*.ear
+*.iml
+
+.project
+.classpath
+.settings
+out/
