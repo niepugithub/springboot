@@ -96,7 +96,7 @@ public class Course {
 			setMainTeacher(param);
 		}else if(i==4){
 			setAssistantTeacher(param);
-		}else if(i==8){
+		}else if(i==9){
 			setStatus(param);
 		}
 	}

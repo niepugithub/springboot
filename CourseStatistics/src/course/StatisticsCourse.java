@@ -140,7 +140,7 @@ public class StatisticsCourse {
 						teacherNames.add(param);
 					}
 					if (i == 9 && j == 1) {
-						System.out.println(param);
+						System.out.println(param+"+++++++");
 					}
 				}
 				if ((course.getName().contains("音乐启蒙课")
