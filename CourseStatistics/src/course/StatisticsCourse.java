@@ -45,6 +45,7 @@ public class StatisticsCourse {
 	// 乌克兰老师
 	static Teacher teacher22 = new Teacher("illia_zuiko");
 	static Teacher teacher23 = new Teacher("olya_luniakina");
+	static Teacher teacher24 = new Teacher("Alla_cui");
 
 	static {
 		teachers.add(teacher1);
@@ -68,14 +69,15 @@ public class StatisticsCourse {
 		teachers.add(teacher21);
 		teachers.add(teacher22);
 		teachers.add(teacher23);
+		teachers.add(teacher24);
 		for (Teacher t : teachers) {
 			teacherMaps.put(t.getName(), t);
 		}
 	}
 
 	public static void main(String[] args) {
-		String path = "D:\\wf\\11.22\\18.xls";
-		String des = "D:\\wf\\11.22\\18统计结果.xls";
+		String path = "F:\\wf\\2019-03-05\\2019-03-10.xls";
+		String des = "F:\\wf\\2019-03-05\\2019-03-10统计结果.xls";
 		Set<Course> courseSet = getAllCourses(path);
 //		System.out.println(courseSet.size() + "====================");
 		// for(Course s: courseSet){
@@ -113,6 +115,8 @@ public class StatisticsCourse {
 		teacherList.add(teacherMaps.get("lemon_zhang"));
 		teacherList.add(teacherMaps.get("vera_fan"));
 		teacherList.add(teacherMaps.get("cherry_yang"));
+		// 2019-03-14新增老师
+		teacherList.add(teacherMaps.get("Alla_cui"));
 		// 2018-11-22新增乌克兰老师
 		teacherList.add(teacherMaps.get("illia_zuiko"));
 		teacherList.add(teacherMaps.get("olya_luniakina"));
