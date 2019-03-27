@@ -28,7 +28,7 @@ public class StatisticsCourse {
 	static Teacher teacher7 = new Teacher("Eric_luo");
 	static Teacher teacher8 = new Teacher("Tina_tang");
 	// static Teacher teacher9 = new Teacher("Sherry_xu");// 离职
-	static Teacher teacher10 = new Teacher("Summer_qiu");
+//	static Teacher teacher10 = new Teacher("Summer_qiu");
 	static Teacher teacher11 = new Teacher("Jenny_liu");
 	static Teacher teacher12 = new Teacher("Yoyo_feng");
 	// 新增的老师
@@ -46,6 +46,8 @@ public class StatisticsCourse {
 	static Teacher teacher22 = new Teacher("illia_zuiko");
 	static Teacher teacher23 = new Teacher("olya_luniakina");
 	static Teacher teacher24 = new Teacher("Alla_cui");
+	static Teacher teacher25 = new Teacher("Merle_liu");
+	static Teacher teacher26 = new Teacher("coco_zhao");
 
 	static {
 		teachers.add(teacher1);
@@ -55,7 +57,7 @@ public class StatisticsCourse {
 		//teachers.add(teacher5);
 		teachers.add(teacher7);
 		teachers.add(teacher8);
-		teachers.add(teacher10);
+//		teachers.add(teacher10);
 		teachers.add(teacher11);
 		teachers.add(teacher12);
 		teachers.add(teacher13);
@@ -70,14 +72,16 @@ public class StatisticsCourse {
 		teachers.add(teacher22);
 		teachers.add(teacher23);
 		teachers.add(teacher24);
+		teachers.add(teacher25);
+		teachers.add(teacher26);
 		for (Teacher t : teachers) {
 			teacherMaps.put(t.getName(), t);
 		}
 	}
 
 	public static void main(String[] args) {
-		String path = "F:\\wf\\2019-03-05\\2019-03-10.xls";
-		String des = "F:\\wf\\2019-03-05\\2019-03-10统计结果.xls";
+		String path = "F:\\wf\\2019-03-12\\2019-03-17.xls";
+		String des = "F:\\wf\\2019-03-12\\2019-03-17统计结果.xls";
 		Set<Course> courseSet = getAllCourses(path);
 //		System.out.println(courseSet.size() + "====================");
 		// for(Course s: courseSet){
@@ -101,7 +105,7 @@ public class StatisticsCourse {
 		// teacherList.add(teacherMaps.get("Rita_zhang"));//离职
 		teacherList.add(teacherMaps.get("Eric_luo"));
 		teacherList.add(teacherMaps.get("Tina_tang"));
-		teacherList.add(teacherMaps.get("Summer_qiu"));
+//		teacherList.add(teacherMaps.get("Summer_qiu"));
 		teacherList.add(teacherMaps.get("Jenny_liu"));
 		// 下面是新增加的老师
 		teacherList.add(teacherMaps.get("Mia_gu"));
@@ -120,6 +124,8 @@ public class StatisticsCourse {
 		// 2018-11-22新增乌克兰老师
 		teacherList.add(teacherMaps.get("illia_zuiko"));
 		teacherList.add(teacherMaps.get("olya_luniakina"));
+		teacherList.add(teacherMaps.get("coco_zhao"));
+		teacherList.add(teacherMaps.get("Merle_liu"));
 
 		return teacherList;
 	}
