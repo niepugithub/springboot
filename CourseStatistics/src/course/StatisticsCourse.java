@@ -11,42 +11,45 @@ import java.io.FileInputStream;
 import java.util.*;
 
 public class StatisticsCourse {
-    public static List<Teacher> teachers = new ArrayList<>();
-    public static Map<String, Teacher> teacherMaps = new HashMap<>();
-    private static Set<String> teacherNames = new HashSet<>();
-    // 添加老师或者删除老师有三处需要修改：其中mapsToList()方法容易忘！！！
-    static Teacher teacher1 = new Teacher("Lima_jin");
-    static Teacher teacher2 = new Teacher("Angel_hu");
-    static Teacher teacher3 = new Teacher("Lily_zou");
-    static Teacher teacher4 = new Teacher("Molly_li");
-    //static Teacher teacher5 = new Teacher("Icey_peng"); // 8.25 离职
-    // static Teacher teacher6 = new Teacher("Rita_zhang");// 离职
-    static Teacher teacher7 = new Teacher("Eric_luo");
-    static Teacher teacher8 = new Teacher("Tina_tang");
-    // static Teacher teacher9 = new Teacher("Sherry_xu");// 离职
+
+    static Set<String> teacherNames = new HashSet<>();
+
+    private static Map<String, Teacher> getTeacherMaps() {
+        List<Teacher> teachers = new ArrayList<>();
+        Map<String, Teacher> teacherMaps = new HashMap<>();
+        // 添加老师或者删除老师有三处需要修改：其中mapsToList()方法容易忘！！！
+        Teacher teacher1 = new Teacher("Lima_jin");
+        Teacher teacher2 = new Teacher("Angel_hu");
+        Teacher teacher3 = new Teacher("Lily_zou");
+        Teacher teacher4 = new Teacher("Molly_li");
+        //static Teacher teacher5 = new Teacher("Icey_peng"); // 8.25 离职
+        // static Teacher teacher6 = new Teacher("Rita_zhang");// 离职
+        Teacher teacher7 = new Teacher("Eric_luo");
+        Teacher teacher8 = new Teacher("Tina_tang");
+        // static Teacher teacher9 = new Teacher("Sherry_xu");// 离职
 //	static Teacher teacher10 = new Teacher("Summer_qiu");
-    static Teacher teacher11 = new Teacher("Jenny_liu");
-    static Teacher teacher12 = new Teacher("Yoyo_feng");
-    // 新增的老师
-    static Teacher teacher13 = new Teacher("Mia_gu");
-    static Teacher teacher14 = new Teacher("grace_wang");
-    static Teacher teacher15 = new Teacher("Chenchen_Chen");
-    static Teacher teacher16 = new Teacher("Carl_Lu");
-    //static Teacher teacher17 = new Teacher("jucy_cai");// 8.25 离职
-    //static Teacher teacher18 = new Teacher("jonlin_chen");// 8.25 离职
+        Teacher teacher11 = new Teacher("Jenny_liu");
+        Teacher teacher12 = new Teacher("Yoyo_feng");
+        // 新增的老师
+        Teacher teacher13 = new Teacher("Mia_gu");
+        Teacher teacher14 = new Teacher("grace_wang");
+        Teacher teacher15 = new Teacher("Chenchen_Chen");
+        Teacher teacher16 = new Teacher("Carl_Lu");
+        //static Teacher teacher17 = new Teacher("jucy_cai");// 8.25 离职
+        //static Teacher teacher18 = new Teacher("jonlin_chen");// 8.25 离职
 
-    static Teacher teacher19 = new Teacher("lemon_zhang");
-    static Teacher teacher20 = new Teacher("vera_fan");
-    //	static Teacher teacher21 = new Teacher("cherry_yang");
-    // 乌克兰老师
-    static Teacher teacher22 = new Teacher("illia_zuiko");
-    static Teacher teacher23 = new Teacher("olya_luniakina");
-    static Teacher teacher24 = new Teacher("Alla_cui");
-    static Teacher teacher25 = new Teacher("Merle_liu");
-    static Teacher teacher26 = new Teacher("coco_zhao");
-    static Teacher teacher27 = new Teacher("alaia_zhao");
+        Teacher teacher19 = new Teacher("lemon_zhang");
+        Teacher teacher20 = new Teacher("vera_fan");
+        //	static Teacher teacher21 = new Teacher("cherry_yang");
+        // 乌克兰老师
+        Teacher teacher22 = new Teacher("illia_zuiko");
+        Teacher teacher23 = new Teacher("olya_luniakina");
+        Teacher teacher24 = new Teacher("Alla_cui");
+        Teacher teacher25 = new Teacher("Merle_liu");
+        Teacher teacher26 = new Teacher("coco_zhao");
+        Teacher teacher27 = new Teacher("alaia_zhao");
 
-    static {
+
         teachers.add(teacher1);
         teachers.add(teacher2);
         teachers.add(teacher3);
@@ -75,12 +78,14 @@ public class StatisticsCourse {
         for (Teacher t : teachers) {
             teacherMaps.put(t.getName(), t);
         }
+        return teacherMaps;
     }
 
     public static void main(String[] args) {
         String path = "D:\\wf\\5.7\\5.12.xls";
         String des = "D:\\wf\\5.7\\5.12统计结果.xls";
-        String prefix = "D:\\wf\\5.7\\5.";
+
+        String prefix = "D:\\wf\\5.14\\5.";
         String suffix = ".xls";
         int startDate = 14;
         int days = 6;
@@ -91,10 +96,9 @@ public class StatisticsCourse {
     public static void deal(String prefix, String suffix, int startDate, int days) {
         for (int i = 1; i <= days; i++) {
             String path = prefix + startDate + suffix;
-            String des = prefix + startDate++ + "统计结果" + suffix;
+            String des = prefix + startDate++ + "统计结果m" + suffix;
             Set<Course> courseSet = getAllCourses(path);
-            statisticCourse(courseSet, teacherMaps);
-            List<Teacher> teacherList = mapsToList(teacherMaps);
+            List<Teacher> teacherList = mapsToList(statisticCourse(courseSet, getTeacherMaps()));
             List2Excel.write2Excel(teacherList, des, "sheet0");
         }
     }
