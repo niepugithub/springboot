@@ -24,7 +24,7 @@ public class StatisticsCourse {
         Teacher teacher4 = new Teacher("Molly_li");
         //static Teacher teacher5 = new Teacher("Icey_peng"); // 8.25 离职
         // static Teacher teacher6 = new Teacher("Rita_zhang");// 离职
-        Teacher teacher7 = new Teacher("Eric_luo");
+        Teacher teacher7 = new Teacher("Vicky_chen");
         Teacher teacher8 = new Teacher("Tina_tang");
         // static Teacher teacher9 = new Teacher("Sherry_xu");// 离职
 //	static Teacher teacher10 = new Teacher("Summer_qiu");
@@ -85,9 +85,10 @@ public class StatisticsCourse {
         String path = "D:\\wf\\5.7\\5.12.xls";
         String des = "D:\\wf\\5.7\\5.12统计结果.xls";
 
-        String prefix = "D:\\wf\\5.14\\5.";
+//        String prefix = "D:\\wf\\6.1\\6.";
+        String prefix = "D:\\wf\\2019-06-18\\2019-06-";
         String suffix = ".xls";
-        int startDate = 14;
+        int startDate = 18;
         int days = 6;
         deal(prefix, suffix, startDate, days);
 
@@ -96,7 +97,7 @@ public class StatisticsCourse {
     public static void deal(String prefix, String suffix, int startDate, int days) {
         for (int i = 1; i <= days; i++) {
             String path = prefix + startDate + suffix;
-            String des = prefix + startDate++ + "统计结果m" + suffix;
+            String des = prefix + startDate++ + "统计结果" + suffix;
             Set<Course> courseSet = getAllCourses(path);
             List<Teacher> teacherList = mapsToList(statisticCourse(courseSet, getTeacherMaps()));
             List2Excel.write2Excel(teacherList, des, "sheet0");
@@ -112,7 +113,7 @@ public class StatisticsCourse {
         teacherList.add(teacherMaps.get("Molly_li"));
         //teacherList.add(teacherMaps.get("Icey_peng"));// 8.25离职
         // teacherList.add(teacherMaps.get("Rita_zhang"));//离职
-        teacherList.add(teacherMaps.get("Eric_luo"));
+        teacherList.add(teacherMaps.get("Vicky_chen"));
         teacherList.add(teacherMaps.get("Tina_tang"));
 //		teacherList.add(teacherMaps.get("Summer_qiu"));
         teacherList.add(teacherMaps.get("Jenny_liu"));
