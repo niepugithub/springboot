@@ -86,9 +86,9 @@ public class StatisticsCourse {
         String des = "D:\\wf\\5.7\\5.12统计结果.xls";
 
 //        String prefix = "D:\\wf\\6.1\\6.";
-        String prefix = "D:\\wf\\2019-06-18\\2019-06-";
+        String prefix = "D:\\wf\\武林\\2019-07-02\\2019-07-0";
         String suffix = ".xls";
-        int startDate = 18;
+        int startDate = 2;
         int days = 6;
         deal(prefix, suffix, startDate, days);
 

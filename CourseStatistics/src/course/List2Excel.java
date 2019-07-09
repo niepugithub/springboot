@@ -48,6 +48,7 @@ public class List2Excel {
 			newExcel.write(out);//保存Excel文件
 			out.close();//关闭文件流
 		}catch(Exception e){
+			e.printStackTrace();
 			System.out.println("写list到excel出错啦");
 		}
 	}
