@@ -39,10 +39,10 @@ public class StatisticsCourse_chengxi {
         String des = "D:\\wf\\5.7\\5.12统计结果.xls";
 
 //        String prefix = "D:\\wf\\6.1\\6.";
-        String prefix = "D:\\wf\\城西\\2019-07-02\\7.";
+        String prefix = "D:\\wf\\城西\\2019-09-02\\8.";
         String suffix = ".xls";
-        int startDate = 1;
-        int days = 7;
+        int startDate = 26;
+        int days = 6;
         deal(prefix, suffix, startDate, days);
 
     }
