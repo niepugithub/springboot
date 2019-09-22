@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.*;
 
-public class StatisticsCourse {
+public class StatisticsCourse_wulin {
 
     static Set<String> teacherNames = new HashSet<>();
 
