@@ -39,7 +39,7 @@ public class StatisticsCourse {
         //static Teacher teacher18 = new Teacher("jonlin_chen");// 8.25 离职
 
         Teacher teacher19 = new Teacher("lemon_zhang");
-        Teacher teacher20 = new Teacher("vera_fan");
+        Teacher teacher20 = new Teacher("elva_hao");
         //	static Teacher teacher21 = new Teacher("cherry_yang");
         // 乌克兰老师
         Teacher teacher22 = new Teacher("illia_zuiko");
@@ -127,7 +127,7 @@ public class StatisticsCourse {
 
         // 2018年9月4号新加
         teacherList.add(teacherMaps.get("lemon_zhang"));
-        teacherList.add(teacherMaps.get("vera_fan"));
+        teacherList.add(teacherMaps.get("elva_hao"));
 //		teacherList.add(teacherMaps.get("cherry_yang"));
         // 2019-03-14新增老师
         teacherList.add(teacherMaps.get("Alla_cui"));
