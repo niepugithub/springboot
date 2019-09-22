@@ -48,6 +48,8 @@ public class StatisticsCourse {
         Teacher teacher25 = new Teacher("Merle_liu");
         Teacher teacher26 = new Teacher("coco_zhao");
         Teacher teacher27 = new Teacher("alaia_zhao");
+        Teacher teacher28 = new Teacher("Alli_hu");
+        Teacher teacher29 = new Teacher("Kiki_zhong");
 
 
         teachers.add(teacher1);
@@ -75,6 +77,8 @@ public class StatisticsCourse {
         teachers.add(teacher25);
         teachers.add(teacher26);
         teachers.add(teacher27);
+        teachers.add(teacher28);
+        teachers.add(teacher29);
         for (Teacher t : teachers) {
             teacherMaps.put(t.getName(), t);
         }
@@ -137,6 +141,8 @@ public class StatisticsCourse {
         teacherList.add(teacherMaps.get("coco_zhao"));
         teacherList.add(teacherMaps.get("Merle_liu"));
         teacherList.add(teacherMaps.get("alaia_zhao"));
+        teacherList.add(teacherMaps.get("Alli_hu"));
+        teacherList.add(teacherMaps.get("Kiki_zhong"));
 
         return teacherList;
     }
