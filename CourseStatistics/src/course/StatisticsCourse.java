@@ -19,7 +19,7 @@ public class StatisticsCourse {
         Map<String, Teacher> teacherMaps = new HashMap<>();
         // 添加老师或者删除老师有三处需要修改：其中mapsToList()方法容易忘！！！
         Teacher teacher1 = new Teacher("Lima_jin");
-        Teacher teacher2 = new Teacher("Angel_hu");
+//        Teacher teacher2 = new Teacher("Angel_hu");
         Teacher teacher3 = new Teacher("Lily_zou");
         Teacher teacher4 = new Teacher("Molly_li");
         //static Teacher teacher5 = new Teacher("Icey_peng"); // 8.25 离职
@@ -51,7 +51,7 @@ public class StatisticsCourse {
 
 
         teachers.add(teacher1);
-        teachers.add(teacher2);
+//        teachers.add(teacher2);
         teachers.add(teacher3);
         teachers.add(teacher4);
         //teachers.add(teacher5);
@@ -108,7 +108,7 @@ public class StatisticsCourse {
         List<Teacher> teacherList = new ArrayList<>();
         teacherList.add(teacherMaps.get("Yoyo_feng"));
         teacherList.add(teacherMaps.get("Lima_jin"));
-        teacherList.add(teacherMaps.get("Angel_hu"));
+//        teacherList.add(teacherMaps.get("Angel_hu"));
         teacherList.add(teacherMaps.get("Lily_zou"));
         teacherList.add(teacherMaps.get("Molly_li"));
         //teacherList.add(teacherMaps.get("Icey_peng"));// 8.25离职
