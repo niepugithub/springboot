@@ -21,7 +21,7 @@ public class StatisticsCourse_wulin {
         Teacher teacher1 = new Teacher("Lima_jin");
 //        Teacher teacher2 = new Teacher("Angel_hu");
         Teacher teacher3 = new Teacher("Lily_zou");
-        Teacher teacher4 = new Teacher("Molly_li");
+//        Teacher teacher4 = new Teacher("Molly_li");
         //static Teacher teacher5 = new Teacher("Icey_peng"); // 8.25 离职
         // static Teacher teacher6 = new Teacher("Rita_zhang");// 离职
         Teacher teacher7 = new Teacher("Vicky_chen");
@@ -42,20 +42,22 @@ public class StatisticsCourse_wulin {
         Teacher teacher20 = new Teacher("elva_hao");
         //	static Teacher teacher21 = new Teacher("cherry_yang");
         // 乌克兰老师
-        Teacher teacher22 = new Teacher("illia_zuiko");
-        Teacher teacher23 = new Teacher("olya_luniakina");
+//        Teacher teacher22 = new Teacher("illia_zuiko");
+//        Teacher teacher23 = new Teacher("olya_luniakina");
         Teacher teacher24 = new Teacher("Alla_cui");
         Teacher teacher25 = new Teacher("Merle_liu");
         Teacher teacher26 = new Teacher("coco_zhao");
         Teacher teacher27 = new Teacher("alaia_zhao");
         Teacher teacher28 = new Teacher("Alli_hu");
         Teacher teacher29 = new Teacher("Kiki_zhong");
+        Teacher teacher30 = new Teacher("Mars_feng");
+        Teacher teacher31 = new Teacher("Stacy_wu");
 
 
         teachers.add(teacher1);
 //        teachers.add(teacher2);
         teachers.add(teacher3);
-        teachers.add(teacher4);
+//        teachers.add(teacher4);
         //teachers.add(teacher5);
         teachers.add(teacher7);
         teachers.add(teacher8);
@@ -71,28 +73,37 @@ public class StatisticsCourse_wulin {
         teachers.add(teacher19);
         teachers.add(teacher20);
 //		teachers.add(teacher21);
-        teachers.add(teacher22);
-        teachers.add(teacher23);
+//        teachers.add(teacher22);
+//        teachers.add(teacher23);
         teachers.add(teacher24);
         teachers.add(teacher25);
         teachers.add(teacher26);
         teachers.add(teacher27);
         teachers.add(teacher28);
         teachers.add(teacher29);
+        teachers.add(teacher30);
+        teachers.add(teacher31);
         for (Teacher t : teachers) {
             teacherMaps.put(t.getName(), t);
         }
         return teacherMaps;
     }
 
+    /**
+     * 更改记录：
+     * 2019-12-17：删掉Molly_li illia_zuiko olya_luniakina 在Kiki_zhong后面加上Mars_feng，在Mars_feng后面加上Stacy_wu
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         String path = "D:\\wf\\5.7\\5.12.xls";
         String des = "D:\\wf\\5.7\\5.12统计结果.xls";
 
 //        String prefix = "D:\\wf\\6.1\\6.";
-        String prefix = "D:\\wf\\武林\\2019-09-02\\2019-08-";
+        String prefix = "D:\\wf\\武林\\2019-11-";
+//        String prefix = "D:\\wf\\2019-11-01\\2019-11-";
         String suffix = ".xls";
-        int startDate = 27;
+        int startDate = 26;
         int days = 5;
         deal(prefix, suffix, startDate, days);
 
@@ -101,7 +112,7 @@ public class StatisticsCourse_wulin {
     public static void deal(String prefix, String suffix, int startDate, int days) {
         for (int i = 1; i <= days; i++) {
             String path = prefix + startDate + suffix;
-            String des = prefix + startDate++ + "统计结果" + suffix;
+            String des = prefix + startDate++ + "统计结果-武林" + suffix;
             Set<Course> courseSet = getAllCourses(path);
             List<Teacher> teacherList = mapsToList(statisticCourse(courseSet, getTeacherMaps()));
             List2Excel.write2Excel(teacherList, des, "sheet0");
@@ -114,12 +125,12 @@ public class StatisticsCourse_wulin {
         teacherList.add(teacherMaps.get("Lima_jin"));
 //        teacherList.add(teacherMaps.get("Angel_hu"));
         teacherList.add(teacherMaps.get("Lily_zou"));
-        teacherList.add(teacherMaps.get("Molly_li"));
+//        teacherList.add(teacherMaps.get("Molly_li"));
         //teacherList.add(teacherMaps.get("Icey_peng"));// 8.25离职
         // teacherList.add(teacherMaps.get("Rita_zhang"));//离职
         teacherList.add(teacherMaps.get("Vicky_chen"));
         teacherList.add(teacherMaps.get("Tina_tang"));
-//		teacherList.add(teacherMaps.get("Summer_qiu"));
+        // teacherList.add(teacherMaps.get("Summer_qiu"));
         teacherList.add(teacherMaps.get("Jenny_liu"));
         // 下面是新增加的老师
         teacherList.add(teacherMaps.get("Mia_gu"));
@@ -132,17 +143,19 @@ public class StatisticsCourse_wulin {
         // 2018年9月4号新加
         teacherList.add(teacherMaps.get("lemon_zhang"));
         teacherList.add(teacherMaps.get("elva_hao"));
-//		teacherList.add(teacherMaps.get("cherry_yang"));
+        // teacherList.add(teacherMaps.get("cherry_yang"));
         // 2019-03-14新增老师
         teacherList.add(teacherMaps.get("Alla_cui"));
         // 2018-11-22新增乌克兰老师
-        teacherList.add(teacherMaps.get("illia_zuiko"));
-        teacherList.add(teacherMaps.get("olya_luniakina"));
+//        teacherList.add(teacherMaps.get("illia_zuiko"));
+//        teacherList.add(teacherMaps.get("olya_luniakina"));
         teacherList.add(teacherMaps.get("coco_zhao"));
         teacherList.add(teacherMaps.get("Merle_liu"));
         teacherList.add(teacherMaps.get("alaia_zhao"));
         teacherList.add(teacherMaps.get("Alli_hu"));
         teacherList.add(teacherMaps.get("Kiki_zhong"));
+        teacherList.add(teacherMaps.get("Mars_feng"));
+        teacherList.add(teacherMaps.get("Stacy_wu"));
 
         return teacherList;
     }

@@ -38,11 +38,11 @@ public class StatisticsCourse_chengxi {
         String path = "D:\\wf\\5.7\\5.12.xls";
         String des = "D:\\wf\\5.7\\5.12统计结果.xls";
 
-//        String prefix = "D:\\wf\\6.1\\6.";
-        String prefix = "D:\\wf\\城西\\2019-09-02\\8.";
+        String prefix = "D:\\wf\\武林\\2019-11-";
+//        String prefix = "D:\\wf\\2019-11-01\\2019-11-";
         String suffix = ".xls";
-        int startDate = 26;
-        int days = 6;
+        int startDate = 12;
+        int days = 4;
         deal(prefix, suffix, startDate, days);
 
     }
@@ -50,7 +50,7 @@ public class StatisticsCourse_chengxi {
     public static void deal(String prefix, String suffix, int startDate, int days) {
         for (int i = 1; i <= days; i++) {
             String path = prefix + startDate + suffix;
-            String des = prefix + startDate++ + "统计结果" + suffix;
+            String des = prefix + startDate++ + "统计结果-城西" + suffix;
             Set<Course> courseSet = getAllCourses(path);
             List<Teacher> teacherList = mapsToList(statisticCourse(courseSet, getTeacherMaps()));
             List2Excel.write2Excel(teacherList, des, "sheet0");
