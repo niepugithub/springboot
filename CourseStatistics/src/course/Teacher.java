@@ -11,11 +11,21 @@ public class Teacher {
     private int makeUp30;//补课（30分钟）
     private String name;
 
-    public Teacher() {
+    // 老师级别，跟课时费统计挂钩
+    private TeacherGradeEnum grade;
+
+    public TeacherGradeEnum getGrade() {
+        return grade;
     }
 
     public Teacher(String name) {
         this.name = name;
+        this.grade = TeacherGradeEnum.middle;
+    }
+
+    public Teacher(String name, TeacherGradeEnum grade) {
+        this.name = name;
+        this.grade = grade;
     }
 
     @Override
