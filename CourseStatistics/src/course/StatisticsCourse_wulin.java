@@ -100,10 +100,10 @@ public class StatisticsCourse_wulin {
         String des = "D:\\wf\\5.7\\5.12统计结果.xls";
 
 //        String prefix = "D:\\wf\\6.1\\6.";
-        String prefix = "D:\\wf\\武林\\2019-11-";
+        String prefix = "D:\\wf\\武林\\2019-12-";
 //        String prefix = "D:\\wf\\2019-11-01\\2019-11-";
         String suffix = ".xls";
-        int startDate = 26;
+        int startDate = 17;
         int days = 5;
         deal(prefix, suffix, startDate, days);
 

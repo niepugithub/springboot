@@ -1,0 +1,14 @@
+@startuml
+actor actor
+actor -> JdkDynamicAOPProxy
+JdkDynamicAOPProxy -> JdkDynamicAOPProxy: invoke
+JdkDynamicAOPProxy -> AdvisedSupport: targetSource
+JdkDynamicAOPProxy -> JdkDynamicAOPProxy: equals和hashCode
+JdkDynamicAOPProxy <-- DecoratingProxy: ultimateTargetClass
+JdkDynamicAOPProxy -> AdvisedSupport: getInterceptorsAndDynamicInterceptionAdvice
+JdkDynamicAOPProxy -> ReflectiveMethodInvocation: new ReflectiveMethodInvocation()
+JdkDynamicAOPProxy <-- ReflectiveMethodInvocation: proceed()
+
+
+'这里的advised是AdviceSupport型，持有targetSource，方便获取target相关的一些信息
+@enduml
