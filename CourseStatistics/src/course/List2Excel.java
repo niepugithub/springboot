@@ -26,7 +26,7 @@ public class List2Excel {
             String[] title = {"指导老师", "时间", "钢琴体检大课（主）", "钢琴体检大课（助）", "音乐体验课（主）",
                     "音乐体验课（助）", "演奏试听小课", "测评课",
                     "音乐启蒙课 ", "钢琴音乐基础（主）", "钢琴音乐基础（助）", "钢琴演奏（30分）", "钢琴演奏（50分）",
-                    "VIP课（50分）", "补/调课（30分钟）", "补/调课（50分钟）", "合计", "课时费总计"};// 表头
+                    "VIP课（50分）", "补/调课（30分钟）", "补/调课（50分钟）", "合计", "课时费总计", "计算表达式"};// 表头
             Row newRow0 = newSheet0.createRow(0);// 创建表头
             int i = 0;
             for (String s : title) {// 写入表头
@@ -39,15 +39,19 @@ public class List2Excel {
                 Teacher t = listArg.get(m);
                 feeMap = CourseFee.getCourseFeeMap(t.getGrade());
                 int totalFee = 0;
+                StringBuilder expression = new StringBuilder();
                 Row newRow = newSheet0.createRow(++i);
-                for (int j = 0; j < title.length - 1; j++) {
+                for (int j = 0; j < title.length - 2; j++) {
                     Cell cell = newRow.createCell(j);
                     try {
                         // 这里可以获取相应的课时名称和数量
                         int courseCount = Integer.parseInt(t.getAttribute(j));
                         Integer singleCountFee = feeMap.get(title[j]);
+                        expression.append(courseCount + " * " + singleCountFee + " + ");
                         if (Objects.isNull(singleCountFee)) {
                             System.out.println("课程没有统计到==========" + title[j]);
+                        } else {
+                            System.out.println("------------统计到的课程名----" + title[j]);
                         }
                         totalFee += courseCount * singleCountFee;
                         cell.setCellValue(courseCount);
@@ -56,8 +60,10 @@ public class List2Excel {
                     }
                 }
                 // 这列加上课时费
-                Cell cell = newRow.createCell(title.length - 1);
-                cell.setCellValue(totalFee);
+                Cell cell1 = newRow.createCell(title.length - 2);
+                Cell cell2 = newRow.createCell(title.length - 1);
+                cell1.setCellValue(totalFee);
+                cell2.setCellValue(expression.subSequence(0, expression.length() - 2).toString() + " = " + totalFee);
             }
             FileOutputStream out = new FileOutputStream(path);
             newExcel.write(out);//保存Excel文件
